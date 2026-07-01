@@ -1,1 +1,0 @@
-# socratix-agentic-org
