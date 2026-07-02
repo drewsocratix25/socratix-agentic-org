@@ -115,23 +115,10 @@
   .rr .rn{font-weight:800;color:#fff;font-variant-numeric:tabular-nums;opacity:0;transition:.5s .6s}
   .rr .rn.show{opacity:1}
   .ph2{opacity:0;transform:translateY(16px);transition:.6s cubic-bezier(.2,.7,.2,1)}.ph2.show{opacity:1;transform:none}
-  .demoposter{position:relative;border-radius:14px;min-height:210px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--cream);overflow:hidden;background:radial-gradient(600px 300px at 30% 0%,#2b3760,transparent 60%),linear-gradient(150deg,#1b2338,#0f1424)}
-  .playbtn{width:64px;height:64px;border-radius:50%;background:rgba(217,164,65,.14);border:2px solid var(--gold);display:grid;place-items:center;color:var(--gold);animation:glow 2.4s infinite}.playbtn svg{width:24px;height:24px;margin-left:4px}
   .tabs{display:flex;gap:9px;flex-wrap:wrap;margin:8px 0 20px}
   .tab{cursor:pointer;border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:9px 18px;font-weight:600;font-size:14px;display:flex;align-items:center;gap:7px;transition:.15s}.tab svg{width:16px;height:16px;opacity:.8}.tab:hover{border-color:var(--amber);transform:translateY(-2px)}.tab.on{background:var(--navy);color:#fff;border-color:var(--navy)}
   .chip{display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:14px;font-weight:600;margin:5px 6px 0 0;animation:pop .4s both}
   .chip b{width:7px;height:7px;border-radius:50%;background:var(--amber2)}
-  .deck{display:flex;flex-wrap:wrap;gap:9px;min-height:56px;padding:12px;border:1.5px dashed var(--line);border-radius:16px;background:rgba(255,255,255,.5);transition:.15s}
-  .deck.over{border-color:var(--amber);background:#FFFDF6}
-  .ucard{cursor:grab;user-select:none;background:#fff;border:1.5px solid var(--line);border-radius:11px;padding:9px 13px;font-size:14.5px;font-weight:600;display:inline-flex;align-items:center;gap:8px;transition:.15s;animation:pop .3s both}
-  .ucard:hover{border-color:var(--amber);transform:translateY(-2px);box-shadow:0 8px 18px -10px rgba(20,27,46,.3)}
-  .ucard:active{cursor:grabbing}.ucard.drag{opacity:.35}
-  .ucard.buy{background:#E4F1E7;border-color:#9CCBAD}.ucard.build{background:#FCE7CF;border-color:#E4B984}.ucard.ignore{background:#F3E2E2;border-color:#E2B6A9}
-  .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
-  .drop{border:1.5px dashed var(--line);border-radius:16px;min-height:180px;padding:13px;background:rgba(255,255,255,.55);transition:.15s;display:flex;flex-direction:column;gap:8px;align-content:flex-start}
-  .drop.over{border-color:var(--amber);background:#FFFBF4;transform:scale(1.015)}
-  .drop .dhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
-  .drop .cnt{font-size:12px;font-weight:800;color:var(--slate);background:var(--tint);border-radius:999px;padding:2px 9px}
   .trail{display:flex;gap:7px;align-items:center}
   .trail b{width:25px;height:25px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:800;color:#fff;animation:pop .35s both}
   .trail b.good{background:#3F9E6A}.trail b.miss{background:#B2483A}
@@ -145,6 +132,22 @@
   .lbl{animation:fadeUp .5s .55s both}
   .ms{animation:pop .5s both;transform-box:fill-box;transform-origin:center}
   .scoreline{font-family:var(--serif);font-style:italic;font-size:19px;color:#AEB6C9}
+  .stgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+  .stattile{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:14px 16px;animation:pop .5s both}
+  .stattile .n{font-family:var(--serif);font-size:40px;font-weight:600;color:var(--gold);line-height:1;font-variant-numeric:tabular-nums}
+  .stattile .c{font-size:12.5px;color:#C7CEDD;margin-top:6px;line-height:1.35}
+  .stattile .s{font-size:9.5px;color:#7d8898;margin-top:8px;letter-spacing:.6px;text-transform:uppercase}
+  .viscard{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:14px 18px 12px;margin-top:16px;animation:pop .5s .3s both;text-align:center}
+  .viscard .vart{max-width:400px;margin:0 auto}
+  .viscard .c{font-size:13px;color:#C7CEDD;margin-top:4px;line-height:1.4}
+  .viscard .s{font-size:9.5px;color:#7d8898;margin-top:6px;letter-spacing:.6px;text-transform:uppercase}
+  .crosser{animation:crossgap 3s ease-in-out infinite}
+  @keyframes crossgap{0%,12%{transform:translate(0,0);opacity:0}22%{opacity:1}68%{transform:translate(66px,-31px);opacity:1}82%,100%{transform:translate(70px,-33px);opacity:0}}
+  .prev{display:flex;flex-direction:column;gap:8px;margin-top:22px}
+  .prevrow{display:flex;align-items:center;gap:11px;font-size:13.5px;color:#C7CEDD}
+  .prevrow b{flex:none;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--amber2);color:var(--amber2);display:grid;place-items:center;font-size:11px;font-weight:800}
+  .prevrow strong{color:#fff;font-weight:700}
+  @media(max-width:900px){.stgrid{grid-template-columns:1fr}}
   /* ---- verdict cinematics ---- */
   #clip{position:fixed;inset:0;z-index:87;display:none;align-items:center;justify-content:center;text-align:center;background:radial-gradient(700px 460px at 50% 30%,rgba(38,50,90,.6),transparent 62%),rgba(11,15,26,.96);color:#fff;cursor:pointer;padding:30px}
   #clip.show{display:flex}
@@ -189,23 +192,6 @@
   @keyframes fallco{0%{transform:translateY(0);opacity:1}85%{opacity:.6}100%{transform:translateY(48px);opacity:0}}
   @keyframes walkout{0%,10%{transform:translateX(0);opacity:1}60%{transform:translateX(118px);opacity:1}76%,100%{transform:translateX(150px);opacity:0}}
   @keyframes dimout{from{opacity:.75}to{opacity:.15}}
-  /* ---- story map ---- */
-  #mapov{position:fixed;inset:0;z-index:88;display:none;align-items:center;justify-content:center;background:rgba(10,14,24,.92);backdrop-filter:blur(6px);padding:26px;overflow:auto}
-  #mapov.show{display:flex}
-  #mapov .inner{max-width:1080px;width:100%}
-  .mapwrap{background:radial-gradient(600px 340px at 80% 0%,#26325a,transparent 60%),linear-gradient(150deg,#1b2338,#111627);border-radius:20px;padding:16px 18px;border:1px solid rgba(255,255,255,.08)}
-  .msn{fill:#141a2c;stroke:#5A6A85;stroke-width:2}.msn.done{stroke:var(--gold)}.msn.on{stroke:var(--gold);fill:#33301e}
-  .mlbl{font-size:9px;fill:#8f9ab0;text-transform:uppercase;letter-spacing:.8px;font-weight:700}.mlbl.on{fill:var(--amber2)}
-  .mp{fill:none;stroke:var(--gold);stroke-width:2;opacity:.85;transform-box:fill-box;transform-origin:center;animation:mpp 1.8s infinite}
-  @keyframes mpp{0%,100%{transform:scale(1);opacity:.9}50%{transform:scale(1.3);opacity:.35}}
-  .medge{stroke:#38445E;stroke-width:2;fill:none}.medge.don{stroke:var(--gold);stroke-width:2.5}
-  .mnl{font-family:var(--serif);font-size:14px;fill:#fff}.mnr{font-size:8.5px;fill:var(--amber2);letter-spacing:1px;text-transform:uppercase;font-weight:700}
-  .mln{fill:#141a2c;stroke-width:2.5}
-  .mltr{font-size:11px;font-weight:800;fill:#fff}
-  .mlg{font-size:9.5px;fill:#8f9ab0}
-  .mapnode{cursor:pointer}
-  .mapnode:hover .msn,.mapnode:hover .mln{filter:brightness(1.6)}
-  .mapnode:hover .mlbl{fill:#fff}
   #prog{position:fixed;top:0;left:0;right:0;height:3px;z-index:60}#prog>i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--amber2),var(--gold));transition:width .5s;box-shadow:0 0 12px rgba(217,164,65,.55)}
   #chapters{position:fixed;top:10px;left:0;right:0;display:flex;justify-content:center;z-index:55;pointer-events:none}
   .cst .seg{stroke:#C4CEDA;stroke-width:1.2;opacity:.55;transition:.4s}
@@ -235,8 +221,8 @@
   #sndbtn:hover{border-color:var(--amber2);color:#fff}
   .reflect{font-family:var(--serif);font-style:italic;font-size:16.5px;color:var(--slate);margin:12px 2px 0}
   svg.art{width:100%;height:auto;display:block}
-  @media print{#prog,#chapters,#sky,#act,#flash,#clip,#mapov,#sndbtn,.noprint{display:none!important}body,body.night{background:#fff!important}}
-  @media(max-width:900px){.g3,.cols{grid-template-columns:1fr}.wrap{padding:60px 20px 130px}.bigline{font-size:34px}.scenecard{flex-direction:column;text-align:center}#act .at{font-size:40px}}
+  @media print{#prog,#chapters,#sky,#act,#flash,#clip,#sndbtn,.noprint{display:none!important}body,body.night{background:#fff!important}}
+  @media(max-width:900px){.g3{grid-template-columns:1fr}.wrap{padding:60px 20px 130px}.bigline{font-size:34px}.scenecard{flex-direction:column;text-align:center}#act .at{font-size:40px}}
 </style>
 </head>
 <body>
@@ -247,7 +233,6 @@
 <div id="flash"></div>
 <div id="act"></div>
 <div id="clip"></div>
-<div id="mapov"></div>
 <button id="sndbtn" class="noprint" onclick="toggleAudio()" aria-label="Toggle sound">Sound: on</button>
 <script>
 const A='#254E64',A2='#B6A78E',NL='#5A7688',DOT='#8EA0B0',GOLD='#D9A441';
@@ -377,17 +362,15 @@ const FOUNDATIONS=[
  {key:'strategy',label:'Strategy',head:'Buy, build, or ignore.',line:'Most is a Buy. A little is a Build. A lot, ignore for now.',chips:['Buy broad tasks','Build only your moat','Ignore the shine'],discuss:'Save money where? Build where?',demo:'buy'},
  {key:'people',label:'People',head:'Activate the managers.',line:'Transformation dies in the middle. Make managers the champions.',chips:['Managers, not bottlenecks','Orchestrators, not PhDs','Keep the junior base'],discuss:'Who is your first champion?',demo:null},
  {key:'tech',label:'Technology',head:'Governance that runs.',line:'Guardrails at the gate. A human always accountable.',chips:['Guardrails first','Every action has a sponsor','Human in the seat'],discuss:'Can you audit your AI today?',demo:null}];
-const SANDBOX_DEFAULT=[{t:'Draft customer emails',v:'',e:'save'},{t:'Summarize long contracts',v:'',e:'save'},{t:'Quote from our pricing data',v:'',e:'value'},{t:'Our own company chatbot',v:'',e:''},{t:'Triage the credit-hold queue',v:'',e:'save'},{t:'Analyze our sales calls',v:'',e:'value'}];
 
 /* ---------------- STATE ---------------- */
-const STAGES=['cover','baseline','choose','journey','foundations','sandbox','roadmap'];
-const STAGE_LABEL={cover:'Prologue',baseline:'The Conversation',choose:'Choose a Story',journey:'The Journey',foundations:'Three Forces',sandbox:'The Table',roadmap:'The Road Ahead'};
-const PHASES=[{l:'The Conversation',s:['baseline']},{l:'A Leader’s Story',s:['choose','journey']},{l:'Your Road',s:['foundations','sandbox','roadmap']}];
-const ACTS={baseline:{k:'Part One',t:'The Conversation',e:'“Know thyself.”'},choose:{k:'Part Two',t:'A Leader’s Story',e:'Three leaders. The same three foundations.'},journey:{},foundations:{k:'Part Three',t:'Your Road',e:'The forces behind every story.'}};
+const STAGES=['cover','baseline','choose','journey','foundations','roadmap'];
+const PHASES=[{l:'The Conversation',s:['baseline']},{l:'A Leader’s Story',s:['choose','journey']},{l:'What Comes Next',s:['foundations','roadmap']}];
+const ACTS={baseline:{k:'Part One',t:'The Conversation',e:'“Know thyself.”'},choose:{k:'Part Two',t:'A Leader’s Story',e:'Three leaders. The same three foundations.'},journey:{},foundations:{k:'Part Three',t:'What Comes Next',e:'The forces behind every story.'}};
 let S=load()||fresh();let started=false;
-function fresh(){return {stage:'cover',dlg:0,suggest:null,votes:{strategy:[],people:[],tech:[]},persona:null,nodeIdx:0,choices:{},sandbox:JSON.parse(JSON.stringify(SANDBOX_DEFAULT)),audio:true,foundTab:'strategy'}}
+function fresh(){return {stage:'cover',dlg:0,suggest:null,votes:{strategy:[],people:[],tech:[]},persona:null,nodeIdx:0,choices:{},audio:true,foundTab:'strategy'}}
 function save(){try{localStorage.setItem('socratix_v4',JSON.stringify(S))}catch(e){}}
-function load(){try{const v=JSON.parse(localStorage.getItem('socratix_v4'))||JSON.parse(localStorage.getItem('socratix_v3'));if(v){if(v.audio===undefined)v.audio=true;return v}}catch(e){}return null}
+function load(){try{const v=JSON.parse(localStorage.getItem('socratix_v4'))||JSON.parse(localStorage.getItem('socratix_v3'));if(v){if(v.audio===undefined)v.audio=true;if(!STAGES.includes(v.stage))v.stage='cover';return v}}catch(e){}return null}
 function resetJourney(){if(!confirm('Start over? This clears your journey.'))return;try{localStorage.removeItem('socratix_v4');localStorage.removeItem('socratix_v3')}catch(e){}S=fresh();render();window.scrollTo({top:0,behavior:'smooth'})}
 const el=id=>document.getElementById(id);
 function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
@@ -440,6 +423,32 @@ function VIG(kind){
   <g class="dimo"><path d="M112 34v8M112 58v-8M100 46h8M124 46h-8" stroke="${GOLD}" stroke-width="2.4" stroke-linecap="round"/></g>
   ${[0,1,2].map(r=>[0,1,2,3].map(c=>`<g class="lrow" style="animation-delay:${(0.1+r*.28+c*.07).toFixed(2)}s"><rect x="${112+c*40-(r%2?20:0)}" y="${106-r*19}" width="36" height="16" rx="2.5" fill="rgba(255,255,255,.07)" stroke="${A2}" stroke-width="1.5"/></g>`).join('')).join('')}
   <g class="ms" style="animation-delay:1.1s"><path d="M182 46a14 14 0 0 1 28 0v10" fill="none" stroke="${LT}" stroke-width="5"/><rect x="174" y="54" width="44" height="30" rx="6" fill="${A2}"/><circle cx="196" cy="68" r="4.5" fill="#1b2338"/></g></svg>`;
+ if(kind==='divide')return `<svg class="art draw" viewBox="0 0 360 150">
+  <path d="M8 118 H150 V150" fill="none" stroke="${LT}" stroke-width="2.5"/><path d="M210 88 H352 M210 88 V150" fill="none" stroke="${LT}" stroke-width="2.5"/>
+  ${[[52,108],[70,110],[88,107],[106,110],[124,108],[61,96],[97,95],[115,96]].map((p,i)=>`<circle cx="${p[0]}" cy="${p[1]}" r="5" fill="${LT}" opacity=".35"/>`).join('')}
+  <path class="dl" pathLength="1" style="animation-delay:.4s" d="M150 116 L210 86" stroke="${GOLD}" stroke-width="2.5" fill="none" stroke-dasharray="none"/>
+  ${[0,1].map(i=>`<g class="crosser" style="animation-delay:${(0.8+i*1.4).toFixed(1)}s"><circle cx="146" cy="112" r="5.5" fill="${GOLD}"/></g>`).join('')}
+  ${[26,42,58].map((h,i)=>`<rect class="gbar" style="animation-delay:${(1+i*.25).toFixed(2)}s" x="${250+i*30}" y="${84-h}" width="18" height="${h}" rx="3" fill="${i>1?GOLD:A2}" opacity=".8"/>`).join('')}
+  <g class="ms" style="animation-delay:1.8s"><path d="M330 24 v-16 h14 l-4 5 4 5 h-14" fill="${GN}"/></g></svg>`;
+ if(kind==='aim')return `<svg class="art draw" viewBox="0 0 360 150">
+  <path d="M64 74 L74 122 H132 L142 74" fill="none" stroke="${LT}" stroke-width="2.5"/>
+  <path d="M218 74 L228 122 H286 L296 74" fill="none" stroke="${LT}" stroke-width="2.5"/>
+  <text x="103" y="140" text-anchor="middle" font-family="Raleway" font-size="9" font-weight="700" letter-spacing="1" fill="#7d8898">SALES &amp; MARKETING</text>
+  <text x="257" y="140" text-anchor="middle" font-family="Raleway" font-size="9" font-weight="700" letter-spacing="1" fill="#7d8898">OPERATIONS</text>
+  ${[0,1,2,3].map(i=>`<circle class="coin" style="animation-delay:${(i*.55).toFixed(2)}s" cx="${88+(i%3)*14}" cy="52" r="8" fill="${GOLD}" opacity=".9"/>`).join('')}
+  <circle class="coin" style="animation-delay:1.4s" cx="250" cy="52" r="8" fill="${GOLD}" opacity=".55"/>
+  <path class="dl" pathLength="1" style="animation-delay:.7s" d="M232 108 C244 84 264 62 292 34" fill="none" stroke="${GN}" stroke-width="3" stroke-linecap="round"/>
+  <path class="dl" pathLength="1" style="animation-delay:1.3s" d="M292 34l-12 1M292 34l-3 11" stroke="${GN}" stroke-width="3" fill="none" stroke-linecap="round"/></svg>`;
+ if(kind==='lead')return `<svg class="art draw" viewBox="0 0 360 150">
+  <g class="vring"><circle cx="180" cy="52" r="17" fill="none" stroke="${A2}" stroke-width="2.5"/></g>
+  <text x="180" y="59" text-anchor="middle" font-family="Cinzel" font-size="20" font-weight="700" fill="${GOLD}">?</text>
+  ${[[92,116],[136,124],[180,128],[224,124],[268,116]].map((p,i)=>`<path class="dl" pathLength="1" style="animation-delay:${(0.2+i*.16).toFixed(2)}s" d="M180 70 L${p[0]} ${p[1]-12}" stroke="#38445E" stroke-width="2" fill="none"/><g class="tw" style="animation-delay:${(0.5+i*.16).toFixed(2)}s"><circle cx="${p[0]}" cy="${p[1]}" r="7" fill="${A2}"/></g>`).join('')}
+  <path d="M60 24 h28 M60 32 h20" stroke="#38445E" stroke-width="3" stroke-linecap="round"/><path d="M272 24 h28 M280 32 h20" stroke="#38445E" stroke-width="3" stroke-linecap="round"/></svg>`;
+ if(kind==='shadow')return `<svg class="art" viewBox="0 0 360 150">
+  <path d="M20 64 H340" stroke="${LT}" stroke-width="1.5" stroke-dasharray="5 6" opacity=".6"/>
+  <rect x="70" y="22" width="46" height="30" rx="7" fill="none" stroke="${GOLD}" stroke-width="2.5"/><path d="M84 37l6 6 11-12" stroke="${GN}" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <g class="eyes"><path d="M244 36 q22 -15 44 0 q-22 15 -44 0Z" fill="none" stroke="${LT}" stroke-width="2.5"/><circle cx="266" cy="36" r="5" fill="${LT}"/></g>
+  ${[[60,96],[104,112],[148,90],[190,116],[232,96],[276,112],[318,94],[92,132],[260,132]].map((p,i)=>`<g class="tw" style="animation-delay:${(i*.28).toFixed(2)}s"><circle cx="${p[0]}" cy="${p[1]}" r="${4+(i%3)}" fill="${A2}"/></g>`).join('')}</svg>`;
  return '';}
 const CLIPS={
  'marc:0:0':{v:'drift',l:['The memo goes out Monday morning.','By Friday, the same work has moved to personal phones.','Now it happens where no one can see it.']},
@@ -489,48 +498,6 @@ function playClip(pid,ni,ci){const p=PERSONAS[pid],node=p.nodes[ni],ch=node.choi
  clipT.push(setTimeout(()=>{const f=el('clipFin');if(f)f.classList.add('show');const v=c.querySelector('.cvig'),n=el('clipLine');if(v)v.style.opacity=.22;if(n)n.style.opacity=0;flashFx(good);good?snd.good():snd.bad();if(!good)c.classList.add('cshake')},t));t+=TV;
  clipT.push(setTimeout(closeClip,t));}
 
-/* ---------------- STORY MAP ---------------- */
-const PILLAR_HEX={strategy:'#7FA8C9',people:'#E4B984',tech:'#A99BD1'};
-function storyMap(){const W=980,H=462,laneOrder=['marc','tiger','pat'],laneY={marc:118,tiger:232,pat:346};
- const stageIdx=STAGES.indexOf(S.stage);
- const laneXs=pid=>{const n=PERSONAS[pid].nodes.length;return PERSONAS[pid].nodes.map((_,i)=>258+i*(390/Math.max(n-1,1)))};
- const OUTX=718,chain=[['baseline','The Talk',62],['choose','The Cast',152]],tail=[['foundations','Forces',812],['sandbox','Table',880],['roadmap','Road',948]];
- const explored=pid=>PERSONAS[pid].nodes.some((_,i)=>S.choices[pid+':'+i]);
- const donePid=pid=>PERSONAS[pid].nodes.every((_,i)=>S.choices[pid+':'+i]);
- let out='';
- // edges
- out+=`<path class="medge ${stageIdx>1?'don':''}" d="M74 232H140"/>`;
- laneOrder.forEach(pid=>{const y=laneY[pid],xs=laneXs(pid),act=pid===S.persona;
-  out+=`<path class="medge ${(explored(pid)||act&&stageIdx>=3)?'don':''}" d="M162 232C205 232 210 ${y} ${xs[0]-14} ${y}"/>`;
-  xs.forEach((x,i)=>{if(i<xs.length-1)out+=`<path class="medge ${S.choices[pid+':'+i]?'don':''}" d="M${x+13} ${y}H${xs[i+1]-13}"/>`});
-  out+=`<path class="medge ${S.choices[pid+':'+(xs.length-1)]?'don':''}" d="M${xs[xs.length-1]+13} ${y}H${OUTX-13}"/>`;
-  out+=`<path class="medge ${(stageIdx>3&&act)?'don':''}" d="M${OUTX+12} ${y}C762 ${y} 768 232 ${tail[0][2]-12} 232"/>`});
- out+=`<path class="medge ${stageIdx>4?'don':''}" d="M${tail[0][2]+11} 232H${tail[1][2]-11}"/><path class="medge ${stageIdx>5?'don':''}" d="M${tail[1][2]+11} 232H${tail[2][2]-11}"/>`;
- // stage nodes
- const sNode=(key,label,x)=>{const on=S.stage===key,done=STAGES.indexOf(key)<stageIdx;
-  return `<g class="mapnode" data-ms="${key}" transform="translate(${x} 232)">${on?'<circle class="mp" r="17"/>':''}<circle r="10" class="msn ${on?'on':done?'done':''}"/><text y="27" text-anchor="middle" class="mlbl ${on?'on':''}">${label}</text><title>${STAGE_LABEL[key]}</title></g>`};
- chain.forEach(c=>out+=sNode(c[0],c[1],c[2]));
- // persona lanes
- laneOrder.forEach(pid=>{const p=PERSONAS[pid],y=laneY[pid],xs=laneXs(pid);
-  const op=pid===S.persona?1:explored(pid)?.85:.55;
-  let lane=`<text x="232" y="${y-6}" text-anchor="end" class="mnl">${p.name}</text><text x="232" y="${y+8}" text-anchor="end" class="mnr">${p.role}</text>`;
-  p.nodes.forEach((n,i)=>{const c=S.choices[pid+':'+i];
-   const isCur=S.stage==='journey'&&pid===S.persona&&i===S.nodeIdx;
-   const stroke=c?(n.choices[c.i].rec?'#3F9E6A':'#B2483A'):PILLAR_HEX[n.pillar];
-   lane+=`<g class="mapnode" data-mn="${pid}:${i}" transform="translate(${xs[i]} ${y})">${isCur?'<circle class="mp" r="19"/>':''}<circle r="12" class="mln" stroke="${stroke}"/>${c?`<text class="mltr" text-anchor="middle" dy="4">${String.fromCharCode(65+c.i)}</text>`:`<circle r="3" fill="${PILLAR_HEX[n.pillar]}"/>`}<title>Scene ${i+1} — ${esc(n.line)}</title></g>`});
-  const endCur=S.stage==='journey'&&pid===S.persona&&S.nodeIdx>=p.nodes.length;
-  lane+=`<g class="mapnode" data-mn="${pid}:${p.nodes.length}" transform="translate(${OUTX} ${y})">${endCur?'<circle class="mp" r="18"/>':''}<path class="st ${donePid(pid)?'done':''}" style="${donePid(pid)?'fill:var(--gold)':'fill:#5A6A85'}" d="M0 -8 L2.2 -2.2 L8 0 L2.2 2.2 L0 8 L-2.2 2.2 L-8 0 L-2.2 -2.2 Z"/><title>${p.name} — the end</title></g>`;
-  out+=`<g style="opacity:${op}">${lane}</g>`});
- tail.forEach(c=>out+=sNode(c[0],c[1],c[2]));
- // legend
- out+=`<g transform="translate(62 434)"><circle r="5" fill="${PILLAR_HEX.strategy}"/><text x="10" y="3.5" class="mlg">Strategy</text><circle cx="78" r="5" fill="${PILLAR_HEX.people}"/><text x="88" y="3.5" class="mlg">People</text><circle cx="148" r="5" fill="${PILLAR_HEX.tech}"/><text x="158" y="3.5" class="mlg">Technology</text><circle cx="248" r="6" fill="#141a2c" stroke="#3F9E6A" stroke-width="2.5"/><text x="258" y="3.5" class="mlg">Best call</text><circle cx="330" r="6" fill="#141a2c" stroke="#B2483A" stroke-width="2.5"/><text x="340" y="3.5" class="mlg">Detour</text><circle cx="408" r="7" fill="none" stroke="${GOLD}" stroke-width="2"/><text x="420" y="3.5" class="mlg">You are here</text><text x="530" y="3.5" class="mlg">Click any point to travel</text></g>`;
- return `<svg class="art" viewBox="0 0 ${W} ${H}">${out}</svg>`}
-function goDirect(s){started=true;S.stage=s;save();render();window.scrollTo({top:0,behavior:'smooth'})}
-function mapGo(pid,i){started=true;S.persona=pid;S.nodeIdx=Math.min(i,PERSONAS[pid].nodes.length);S.stage='journey';window._ln=null;closeMapOv();snd.tick();save();render();window.scrollTo({top:0,behavior:'smooth'})}
-function closeMapOv(){el('mapov').classList.remove('show')}
-function toggleMap(){const m=el('mapov');if(m.classList.contains('show')){closeMapOv();return}
- m.innerHTML=`<div class="inner"><div class="between" style="margin-bottom:10px"><div class="kick l" style="margin:0">The map of roads</div><button class="btn ghost ond sm" onclick="closeMapOv()">Close</button></div><div class="mapwrap">${storyMap()}</div></div>`;
- m.classList.add('show');snd.tick()}
 
 /* ---------------- ACT INTERSTITIALS + NAV ---------------- */
 let actT=null,actDone=null;
@@ -559,7 +526,7 @@ function render(){const b=el('sndbtn');if(b)b.textContent='Sound: '+(S.audio?'on
   const ci=STAGES.indexOf(S.stage);el('prog').firstElementChild.style.width=(ci/(STAGES.length-1)*100)+'%';
   const night=['cover','baseline','choose'].includes(S.stage);setNight(night);
   el('chapters').className=night?'ond':'';renderChapters();
-  ({cover:rCover,baseline:rBaseline,choose:rChoose,journey:rJourney,foundations:rFoundations,sandbox:rSandbox,roadmap:rRoadmap}[S.stage])(el('app'));save();}
+  ({cover:rCover,baseline:rBaseline,choose:rChoose,journey:rJourney,foundations:rFoundations,roadmap:rRoadmap}[S.stage]||rCover)(el('app'));save();}
 
 /* ---------------- PROLOGUE ---------------- */
 function rCover(app){const cast=[['guide','Socrates','Your Guide','calm'],['marc',PERSONAS.marc.name,PERSONAS.marc.role,PERSONAS.marc.mood],['tiger',PERSONAS.tiger.name,PERSONAS.tiger.role,PERSONAS.tiger.mood],['pat',PERSONAS.pat.name,PERSONAS.pat.role,PERSONAS.pat.mood]];
@@ -567,8 +534,12 @@ function rCover(app){const cast=[['guide','Socrates','Your Guide','calm'],['marc
   <div><div class="wordmark" style="margin-bottom:18px;animation:fadeUp .6s .1s both">SOCRATIX&nbsp;AI</div>
     <div style="font-family:var(--serif);font-size:14px;letter-spacing:4px;text-transform:uppercase;color:var(--amber2);margin-bottom:12px;animation:fadeUp .6s .25s both">An Interactive Journey</div>
     <h1 style="font-size:66px;line-height:1;animation:fadeUp .7s .4s both">The Agentic Org</h1>
-    <p style="font-family:var(--sans);font-size:20px;max-width:480px;margin-top:20px;color:#D6DDE4;line-height:1.55;animation:fadeUp .7s .6s both">Everyone is adopting AI. Almost no one is getting value. Your guide, <b style="color:#fff">Socrates</b>, and three leaders will walk you through the three foundations. By the end, you might see yourself in one of them.</p>
-    <div style="margin-top:30px;animation:fadeUp .7s .85s both" class="flex"><button class="btn pulse" onclick="beginApp()">Begin the journey →</button></div></div>
+    <p style="font-family:var(--sans);font-size:19px;max-width:500px;margin-top:20px;color:#D6DDE4;line-height:1.55;animation:fadeUp .7s .6s both">Everyone is adopting AI. Almost no one is getting value. Walk the journeys of three leaders — where they win, and where the pitfalls hide — with every choice and consequence drawn from current research on how organizations adopt AI to optimize and innovate.</p>
+    <div class="prev">
+      <div class="prevrow" style="animation:fadeUp .6s .8s both"><b>1</b><span><strong>The Conversation</strong> — Socrates reads where you stand</span></div>
+      <div class="prevrow" style="animation:fadeUp .6s .92s both"><b>2</b><span><strong>A Leader’s Story</strong> — choices, consequences, momentum</span></div>
+      <div class="prevrow" style="animation:fadeUp .6s 1.04s both"><b>3</b><span><strong>What Comes Next</strong> — the three forces, and your first step</span></div></div>
+    <div style="margin-top:28px;animation:fadeUp .7s 1.2s both" class="flex"><button class="btn pulse" onclick="beginApp()">Begin the journey →</button></div></div>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px 26px;justify-items:center">
     ${cast.map((c,i)=>`<div class="tilt" style="text-align:center;animation:pop .6s ${(0.3+i*0.16).toFixed(2)}s both"><div style="height:152px;display:grid;place-items:end center">${CHAR(c[0],c[3],142)}</div><div style="font-family:var(--serif);font-size:18px;color:#fff;font-weight:600;margin-top:2px">${c[1]}</div><div style="font-size:11px;letter-spacing:1.5px;color:var(--amber2);text-transform:uppercase;margin-top:1px">${c[2]}</div></div>`).join('')}
   </div></div></div>`;}
@@ -577,10 +548,18 @@ function beginApp(){started=true;snd.tick();go('baseline')}
 /* ---------------- ACT I · THE CONVERSATION ---------------- */
 const DLG=[
  {say:"I am Socrates, your guide for this journey. Before we begin, I want to know where you truly stand.",mood:'calm'},
- {say:"Everyone is adopting AI. Almost no one is getting value. Three honest questions will tell me which kind of company you are.",mood:'think'},
- {ask:'strategy',mood:'think',q:"First. Do you know where AI should save you money — and where it should make you money?",labels:["No idea","","Getting there","","Crystal clear"]},
- {ask:'people',mood:'think',q:"Your managers. Could they lead a team working with AI tomorrow morning?",labels:["Not a chance","","Some could","","Every one"]},
- {ask:'tech',mood:'think',q:"Last one. If I asked what your AI does right now, and who is accountable — could you tell me?",labels:["No clue","","Roughly","","Yes, with guardrails"]},
+ {say:"Everyone is adopting AI. Almost no one is getting value. Look at the numbers.",mood:'think',stats:[
+   {n:88,suf:'%',c:'of organizations now use AI in at least one business function',s:'McKinsey · State of AI, 2025'},
+   {n:95,suf:'%',c:'of enterprise AI pilots deliver no measurable return',s:'MIT · The GenAI Divide, 2025'},
+   {n:33,suf:'%',c:'have begun to scale AI beyond pilots and experiments',s:'McKinsey · State of AI, 2025'}]},
+ {say:"This journey is built on that evidence — where organizations really win with AI, and where they stumble. Three honest questions will tell me which kind of company you are.",mood:'think',
+  vis:'divide',cap:'Roughly 1 in 20 pilots crosses the divide into measurable value. This journey walks the paths of those who make it — and those who don’t.',src:'MIT · The GenAI Divide, 2025'},
+ {ask:'strategy',mood:'think',q:"First. Do you know where AI should save you money — and where it should make you money?",labels:["No idea","A hunch","Getting there","Mostly clear","Crystal clear"],
+  vis:'aim',cap:'Most AI budgets chase sales and marketing — yet the clearest returns sit in back-office operations.',src:'MIT · The GenAI Divide, 2025'},
+ {ask:'people',mood:'think',q:"Your managers. Could they lead a team working with AI tomorrow morning?",labels:["Not a chance","A few might","Some could","Most could","Every one"],
+  vis:'lead',cap:'60% of leaders say their company lacks a vision and plan for AI.',src:'Microsoft & LinkedIn · Work Trend Index, 2024'},
+ {ask:'tech',mood:'think',q:"Last one. If I asked what your AI does right now, and who is accountable — could you tell me?",labels:["No clue","Bits and pieces","Roughly","Mostly","Yes, with guardrails"],
+  vis:'shadow',cap:'9 in 10 employees already use AI daily — most of it invisible to the company. Only 4 in 10 companies provide official tools.',src:'MIT · The GenAI Divide, 2025'},
  {reveal:true}];
 function diagnose(){const s=avg(S.votes.strategy),p=avg(S.votes.people),t=avg(S.votes.tech),tot=s+p+t;let id;if(tot<=7)id='pat';else if(s<(p+t)/2-0.4)id='marc';else if(tot>=11)id='tiger';else id='marc';
  const read={pat:"You are early — and that is no sin. Your move: one cheap win on a number you already track. Prove it, and belief follows.",marc:"There is energy, but no map. Your move: standardize one workflow, put a manager in charge, and let momentum build.",tiger:"You are ready for real leverage. Your move: find the one place your data is a moat, and the talent to build it."}[id];return {id,tot,read};}
@@ -606,12 +585,17 @@ function rBaseline(app){const i=Math.min(S.dlg||0,DLG.length-1),beat=DLG[i];
     return;}
   const gm=beat.mood||'calm';
   const actions=beat.ask?`<div class="dopts">${beat.labels.map((l,k)=>`<button class="dopt" data-ans="${beat.ask}:${k+1}"><b>${k+1}</b>${l?`<span>${esc(l)}</span>`:''}</button>`).join('')}</div>`:`<button class="btn" data-dlg="1">Continue ▸</button>`;
+  const tiles=beat.stats?`<div class="stgrid">${beat.stats.map((t,k)=>`<div class="stattile" style="animation-delay:${(0.35+k*0.22).toFixed(2)}s"><div class="n"><span class="cnt" data-n="${t.n}">0</span>${t.suf}</div><div class="c">${esc(t.c)}</div><div class="s">${esc(t.s)}</div></div>`).join('')}</div>`:'';
+  const vis=beat.vis?`<div class="viscard"><div class="vart">${VIG(beat.vis)}</div><div class="c">${esc(beat.cap)}</div><div class="s">${esc(beat.src)}</div></div>`:'';
   app.innerHTML=`<div class="dark-stage"><div class="wrap vn">
     <div class="dchar"><div class="charwrap">${CHAR('guide',gm,300)}</div></div>
     <div><div class="dname">Socrates · your AI guide</div>
-      <div class="dbox" onclick="skipType()"><p id="dtext" class="dtext"></p><div class="dact" id="dact">${actions}</div></div>
+      <div class="dbox" onclick="skipType()"><p id="dtext" class="dtext"></p><div class="dact" id="dact">${actions}</div></div>${tiles}${vis}
       <div class="steps" style="margin-top:18px">${DLG.filter(b=>!b.reveal).map((b,k)=>`<i class="${k<=i?'on':''}"></i>`).join('')}</div></div>
   </div></div>`;
+  if(beat.stats)setTimeout(()=>{document.querySelectorAll('.cnt').forEach(n=>{const tg=+n.dataset.n;
+    if(RM){n.textContent=tg;return}
+    const st=Date.now(),dur=1200;const iv=setInterval(()=>{const pr=Math.min(1,(Date.now()-st)/dur);n.textContent=Math.round(tg*(1-Math.pow(1-pr,3)));if(pr>=1)clearInterval(iv)},30)})},450);
   const text=beat.ask?beat.q:beat.say;setTimeout(()=>{const n=el('dtext');if(n)typeInto(n,text,()=>{const a=el('dact');if(a)a.classList.add('show')})},50);}
 
 /* ---------------- ACT II · CHOOSE A STORY ---------------- */
@@ -622,7 +606,8 @@ function rChoose(app){const cards=Object.entries(PERSONAS).map(([id,p],i)=>`<div
   <p style="font-size:16px;color:#dfe4ef;font-style:italic;font-family:var(--serif)">“${p.quote}”</p></div>`).join('');
   app.innerHTML=`<div class="dark-stage"><div class="wrap"><div class="kick l">Choose a Story</div><h1 class="bigline">Whose shoes?</h1>
     <p class="muted" style="font-size:19px;margin-top:12px">Three leaders. The same three foundations.</p>
-    <div class="grid g3" style="margin-top:26px">${cards}</div></div></div>`;}
+    <div class="grid g3" style="margin-top:26px">${cards}</div>
+    <p style="font-size:13.5px;color:#8f9ab0;margin-top:22px;text-align:center;animation:fadeUp .6s .6s both">Choose the one that sounds most like you — their road becomes yours.</p></div></div>`;}
 
 /* ---------------- ACT III · THE JOURNEY ---------------- */
 function rJourney(app){const p=PERSONAS[S.persona];if(!p){go('choose');return}const idx=S.nodeIdx;
@@ -631,13 +616,12 @@ function rJourney(app){const p=PERSONAS[S.persona];if(!p){go('choose');return}co
       return `<div class="rrow" style="animation-delay:${(0.15+i*0.12).toFixed(2)}s">${tagPill(n.pillar)}<span style="flex:1;font-size:14.5px;font-weight:600">${esc(ch.t)}</span><span class="pill ${ch.rec?'buy':'ignore'}">${ch.rec?'Best call':'Detour'}</span></div>`}).join('');
     const firstEnd=window._endP!==S.persona;window._endP=S.persona;
     if(firstEnd)setTimeout(()=>snd.good(),350);
-    app.innerHTML=`<div class="wrap"><div class="between" style="margin-bottom:14px"><div class="kick" style="margin:0">${p.name} · The end</div><button class="btn ghost sm noprint" onclick="toggleMap()">Map</button></div>
+    app.innerHTML=`<div class="wrap"><div class="kick">${p.name} · The end</div>
     <div class="scenecard">${firstEnd?burst():''}<div class="ring soft" style="width:200px;height:200px;top:-70px;right:-60px"></div>
       <div style="flex:1"><div style="color:var(--amber2);font-weight:700;letter-spacing:1px;font-size:12px;text-transform:uppercase">${p.role}</div><p class="bigline" style="color:#fff;margin-top:10px;font-size:40px">${wordsUp(p.outcome)}</p></div>
       <div class="charwrap">${CHAR(S.persona,'proud',260)}</div></div>
     <div class="card" style="margin-top:16px"><div class="flex" style="gap:20px;align-items:flex-start"><div style="padding-top:4px">${FLAME(m.m,44)}</div>
       <div style="flex:1"><div class="kick" style="margin-bottom:8px">Your path · ${m.recs} of ${m.done} best calls</div>${recap}</div></div></div>
-    <div class="mapwrap noprint" style="margin-top:16px"><div class="between" style="margin-bottom:4px;padding:4px 6px 0"><div style="color:var(--amber2);font-weight:700;letter-spacing:1.5px;font-size:11px;text-transform:uppercase">Every road, one map</div><span style="color:#8f9ab0;font-size:12px">Click any point to travel</span></div>${storyMap()}</div>
     <div class="flex" style="margin-top:22px"><button class="btn" onclick="go('foundations')">The three forces →</button></div></div>`;return;}
   const node=p.nodes[idx],picked=S.choices[S.persona+':'+idx];
   const key=S.persona+':'+idx,firstLook=window._ln!==key;window._ln=key;
@@ -651,7 +635,7 @@ function rJourney(app){const p=PERSONAS[S.persona];if(!p){go('choose');return}co
     below=`<div class="verdict ${c.rec?'good':'bad'}">${c.rec?burst():''}<div class="vface">${REACT(!!c.rec,74)}</div>
       <div style="flex:1;position:relative"><div class="vkick">You chose · ${esc(c.t)}</div><div class="vline">${esc(c.c)}</div><div class="vtags">${c.tags.map(t=>tagPill(t)).join('')}</div></div></div>
       <p class="reflect">Worth sitting with: ${esc(node.discuss)}</p>`;}
-  app.innerHTML=`<div class="wrap"><div class="between" style="margin-bottom:14px"><div class="kick" style="margin:0">${p.name} · Scene ${idx+1}/${p.nodes.length}</div><button class="btn ghost sm noprint" onclick="toggleMap()">Map</button></div>
+  app.innerHTML=`<div class="wrap"><div class="kick">${p.name} · Scene ${idx+1}/${p.nodes.length}</div>
     ${idx===0?`<p style="font-family:var(--serif);font-size:20px;color:var(--slate);margin:0 0 16px">${esc(p.opening)}</p>`:''}
     <div class="scenecard" id="scene"><div class="ring soft" style="width:220px;height:220px;top:-80px;right:-70px"></div>
       <div style="flex:1"><div class="flex" style="gap:12px;margin-bottom:14px">${tagPill(node.pillar,true)}<div class="trail">${trail}</div></div>
@@ -677,64 +661,39 @@ function rFoundations(app){const tabs=FOUNDATIONS.map(f=>`<div class="tab ${S.fo
       <div style="margin-top:16px">${f.chips.map((c,i)=>`<span class="chip" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);color:#e7ebf3;animation-delay:${(0.3+i*0.14).toFixed(2)}s"><b></b>${esc(c)}</span>`).join('')}</div></div>
       <div style="width:280px">${artPillar(f.key)}</div></div>
     <p class="reflect">Worth sitting with: ${esc(f.discuss)}</p>
-    <div style="margin-top:22px"><button class="btn" onclick="go('sandbox')">The table →</button></div></div>`;}
-
-/* ---------------- ACT V · THE TABLE ---------------- */
-function rSandbox(app){
-  const card=(u,i)=>`<div class="ucard ${u.v||''}" draggable="true" data-u="${i}" title="Drag to a column, or tap to cycle">${esc(u.t)}${u.e?`<span class="pill econ" style="margin:0">${u.e==='save'?'saves':'creates'}</span>`:''}</div>`;
-  const unassigned=S.sandbox.map((u,i)=>u.v?'':card(u,i)).join('');
-  const col=k=>S.sandbox.map((u,i)=>u.v===k?card(u,i):'').join('');
-  const cnt=k=>S.sandbox.filter(u=>u.v===k).length;
-  app.innerHTML=`<div class="wrap"><div class="kick">The Table</div><h1 class="bigline" style="font-size:44px">Now, your own hand.</h1>
-    <p class="muted" style="font-size:17px;margin-top:10px">Sort each. Most Buy. A few Build. Some Ignore.</p>
-    <div class="deck" data-k="none" style="margin-top:16px">${unassigned||'<span class="muted" style="font-size:13px;align-self:center">Every card is on the table. Drag one back here to rethink it.</span>'}</div>
-    <div class="cols">
-      <div class="drop" data-k="buy"><div class="dhead"><span class="pill buy" style="margin:0">Buy · save</span><span class="cnt">${cnt('buy')}</span></div>${col('buy')}</div>
-      <div class="drop" data-k="build"><div class="dhead"><span class="pill build" style="margin:0">Build · create</span><span class="cnt">${cnt('build')}</span></div>${col('build')}</div>
-      <div class="drop" data-k="ignore"><div class="dhead"><span class="pill ignore" style="margin:0">Ignore</span><span class="cnt">${cnt('ignore')}</span></div>${col('ignore')}</div></div>
-    <div class="flex noprint" style="margin-top:14px"><input type="text" id="newUse" placeholder="Add your own…" style="max-width:340px"/><button class="btn ghost sm" onclick="addUse()">Add</button></div>
     <div style="margin-top:22px"><button class="btn" onclick="go('roadmap')">The road ahead →</button></div></div>`;}
-function addUse(){const inp=el('newUse');const v=inp&&inp.value.trim();if(!v)return;S.sandbox.push({t:v,v:'',e:''});snd.tick();save();render()}
 
-/* ---------------- EPILOGUE · THE ROAD AHEAD ---------------- */
+/* ---------------- CLOSING · THE ROAD AHEAD ---------------- */
 function rRoadmap(app){let w=null,lo=99;PILLARS.forEach(p=>{const v=avg(S.votes[p.key]);if(S.votes[p.key].length&&v<lo){lo=v;w=p}});
-  const B=k=>S.sandbox.filter(u=>u.v===k).map(u=>u.t);const buys=B('buy'),builds=B('build'),ig=B('ignore');
-  const paths=[...new Set(Object.keys(S.choices).map(k=>k.split(':')[0]))].map(id=>PERSONAS[id]).filter(Boolean);
   const per=S.persona?PERSONAS[S.persona]:null;const m=S.persona?momentum(S.persona):null;
-  const story=per?`<div class="flex" style="margin:14px 0 4px"><span class="chip"><b></b>You walked ${per.name}’s road${m&&m.done?` · ${m.recs} of ${m.done} best calls`:''}</span>${paths.filter(x=>x!==per).map(x=>`<span class="chip"><b></b>Also explored: ${x.name}</span>`).join('')}</div>`:'';
-  const li=a=>a.length?a.map((b,i)=>`<div style="font-size:15px;padding:3px 0;animation:fadeUp .4s ${(0.2+i*0.08).toFixed(2)}s both">${esc(b)}</div>`).join(''):'<div class="muted" style="font-size:14px">—</div>';
+  const story=per?`<div class="flex" style="margin:14px 0 4px"><span class="chip"><b></b>You walked ${per.name}’s road${m&&m.done?` · ${m.recs} of ${m.done} best calls`:''}</span>${w?`<span class="chip"><b></b>Your reading points to ${w.label} first</span>`:''}</div>`:'';
+  const steps=[
+   ['See clearly before you spend','Score yourselves honestly across the three foundations — before anyone commits a dollar to building.'],
+   ['Put AI in your leaders’ hands','An hour of real use changes the conversation more than a quarter of slideware.'],
+   ['Prove it small','One workflow, one owner, one number you already track. Belief follows evidence.']];
   app.innerHTML=`<div class="wrap"><div class="kick">The Road Ahead</div><h1 class="bigline" style="font-size:48px">How your story continues.</h1>
     ${story}
     <div style="margin:16px 0">${artRoad()}</div>
     <div class="grid g3">
-      <div class="card" style="animation:fadeUp .5s .1s both"><span class="pill buy">Buy · save</span>${li(buys)}</div>
-      <div class="card" style="animation:fadeUp .5s .25s both"><span class="pill build">Build · create</span>${li(builds)}</div>
-      <div class="card" style="animation:fadeUp .5s .4s both"><span class="pill ignore">Ignore</span>${li(ig)}</div></div>
-    ${w?`<p class="bigline" style="font-size:26px;margin-top:20px">Start with <span style="color:var(--amber)">${w.label}</span>.</p>`:''}
-    <div class="scenecard" style="margin-top:18px"><div class="ring soft" style="width:200px;height:200px;top:-70px;right:-60px"></div>
-      <div style="flex:1"><div style="color:var(--amber2);font-weight:700;letter-spacing:1px;font-size:12px;text-transform:uppercase">Your next step</div>
-        <h2 style="color:#fff;font-size:32px;margin:8px 0 8px">The Readiness Sprint</h2>
-        <p style="font-family:var(--serif);font-size:20px;color:#e7ebf3;max-width:520px">Two weeks. We score your three foundations, map save-vs-build, hand you a 90-day plan with the first pilot scoped.</p>
-        <div class="wordmark" style="margin-top:12px">SOCRATIX AI · <span style="font-family:var(--serif);letter-spacing:0;font-style:italic;text-transform:none">Human Wisdom. AI Illumination.</span></div></div>
-      <div class="charwrap">${CHAR('tiger','proud',220)}</div></div>
-    <div class="flex noprint" style="margin-top:22px"><button class="btn" onclick="window.print()">Print</button><button class="btn ghost" onclick="resetJourney()">Start over</button></div></div>`;}
+      ${FOUNDATIONS.map((f,i)=>`<div class="card" style="animation:fadeUp .5s ${(0.1+i*0.15).toFixed(2)}s both"><div class="flex" style="gap:10px;margin-bottom:6px"><div class="icircle">${IC[f.key]}</div><strong style="font-family:var(--serif);font-size:17px">${f.label}</strong></div><p style="margin:4px 0 0;font-size:15px;color:var(--slate)">${esc(f.head)} ${esc(f.line)}</p></div>`).join('')}</div>
+    <div class="kick" style="margin:26px 0 4px">Where to go from here</div>
+    ${steps.map((st,i)=>`<div class="rrow" style="animation-delay:${(0.3+i*0.15).toFixed(2)}s"><b style="flex:none;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--amber);color:var(--amber);display:grid;place-items:center;font-size:12px;font-weight:800">${i+1}</b><div><strong>${st[0]}.</strong> <span class="muted" style="font-size:14.5px">${st[1]}</span></div></div>`).join('')}
+    <div class="scenecard" style="margin-top:20px"><div class="ring soft" style="width:200px;height:200px;top:-70px;right:-60px"></div>
+      <div style="flex:1"><div style="color:var(--amber2);font-weight:700;letter-spacing:1px;font-size:12px;text-transform:uppercase">A parting word</div>
+        <h2 style="color:#fff;font-size:32px;margin:8px 0 8px">Before you transform anything, see clearly.</h2>
+        <p style="font-family:var(--serif);font-size:20px;color:#e7ebf3;max-width:520px">The leaders who crossed the divide didn’t start by building. They started by seeing. When you want a guide for that first step, we’re easy to find.</p>
+        <div class="wordmark" style="margin-top:12px">SOCRATIX AI · <span style="font-family:var(--serif);letter-spacing:0;font-style:italic;text-transform:none">Human Wisdom. AI Illumination.</span> · <span style="letter-spacing:.5px;text-transform:none">socratixai.com</span></div></div>
+      <div class="charwrap">${CHAR('guide','calm',220)}</div></div>
+    <div class="flex noprint" style="margin-top:22px"><button class="btn ghost" onclick="resetJourney()">Start over</button></div></div>`;}
 
 /* ---------------- EVENTS ---------------- */
 const appEl=el('app');
-appEl.addEventListener('click',e=>{const t=e.target.closest('[data-persona],[data-choice],[data-tab],[data-u],[data-dlg],[data-ans]');if(!t)return;
+appEl.addEventListener('click',e=>{const t=e.target.closest('[data-persona],[data-choice],[data-tab],[data-dlg],[data-ans]');if(!t)return;
   if(t.dataset.dlg){S.dlg=(S.dlg||0)+1;snd.tick();save();render();return}
   if(t.dataset.ans){const[k,n]=t.dataset.ans.split(':');S.votes[k]=[+n];S.dlg=(S.dlg||0)+1;snd.tick();save();render();return}
   if(t.dataset.persona){S.persona=t.dataset.persona;S.nodeIdx=0;snd.tick();save();go('journey')}
   else if(t.dataset.choice!=null){pickChoice(+t.dataset.choice)}
-  else if(t.dataset.tab){S.foundTab=t.dataset.tab;snd.tick();save();render()}
-  else if(t.dataset.u!=null){if(window._dragging){window._dragging=false;return}
-    const u=S.sandbox[+t.dataset.u],order=['','buy','build','ignore'];u.v=order[(order.indexOf(u.v)+1)%4];snd.tick();save();render()}});
-/* drag & drop for The Table */
-appEl.addEventListener('dragstart',e=>{const c=e.target.closest('.ucard');if(!c)return;window._dragging=true;e.dataTransfer.setData('text/plain',c.dataset.u);e.dataTransfer.effectAllowed='move';c.classList.add('drag')});
-appEl.addEventListener('dragend',e=>{const c=e.target.closest('.ucard');if(c)c.classList.remove('drag');setTimeout(()=>{window._dragging=false},50)});
-appEl.addEventListener('dragover',e=>{const d=e.target.closest('.drop,.deck');if(d){e.preventDefault();e.dataTransfer.dropEffect='move';d.classList.add('over')}});
-appEl.addEventListener('dragleave',e=>{const d=e.target.closest('.drop,.deck');if(d)d.classList.remove('over')});
-appEl.addEventListener('drop',e=>{const d=e.target.closest('.drop,.deck');if(!d)return;e.preventDefault();const i=+e.dataTransfer.getData('text/plain');if(isNaN(i)||!S.sandbox[i])return;S.sandbox[i].v=d.dataset.k==='none'?'':d.dataset.k;window._dragging=false;snd.tick();save();render()});
+  else if(t.dataset.tab){S.foundTab=t.dataset.tab;snd.tick();save();render()}});
 /* 3D tilt on pointer (desktop only) */
 if(!(window.matchMedia&&matchMedia('(pointer:coarse)').matches)&&!RM){
  document.addEventListener('mousemove',e=>{const c=e.target.closest?e.target.closest('.tilt'):null;
@@ -744,8 +703,7 @@ if(!(window.matchMedia&&matchMedia('(pointer:coarse)').matches)&&!RM){
 /* keyboard: F controls · Esc closes · ←/→ + clicker keys navigate */
 document.addEventListener('keydown',e=>{
   if(/input|textarea|select/i.test(document.activeElement.tagName))return;
-  if(e.key==='m'||e.key==='M'){toggleMap();return}
-  if(e.key==='Escape'){closeClip();closeMapOv();if(el('act').classList.contains('show'))hideAct();return}
+  if(e.key==='Escape'){closeClip();if(el('act').classList.contains('show'))hideAct();return}
   const fwd=['ArrowRight','PageDown'].includes(e.key),back=['ArrowLeft','PageUp'].includes(e.key);
   if(!fwd&&!back)return;
   if(el('clip').classList.contains('show')){closeClip();return}
@@ -755,11 +713,6 @@ document.addEventListener('keydown',e=>{
   if(S.stage==='journey'){fwd?nextNode():prevNode()}});
 el('act').addEventListener('click',hideAct);
 el('clip').addEventListener('click',closeClip);
-el('mapov').addEventListener('click',e=>{if(e.target.id==='mapov')closeMapOv()});
-/* story-map navigation (works in overlay and embedded map) */
-document.addEventListener('click',e=>{if(!e.target.closest)return;
-  const mn=e.target.closest('[data-mn]');if(mn){const[pid,i]=mn.dataset.mn.split(':');mapGo(pid,+i);return}
-  const ms=e.target.closest('[data-ms]');if(ms){closeMapOv();snd.tick();goDirect(ms.dataset.ms)}});
 sizeSky();
 render();
 </script>
