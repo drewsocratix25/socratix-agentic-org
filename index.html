@@ -16,6 +16,7 @@
   body.night #sky{opacity:1}
   #app{position:relative;z-index:1}
   .wrap{max-width:1180px;margin:0 auto;padding:70px 46px 132px}
+  .covergrid{min-height:100vh;display:grid;grid-template-columns:1.02fr .98fr;gap:34px;align-items:center}
   ::selection{background:var(--amber-soft)}
   h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:-.5px;margin:0}
   .kick{font-size:12px;font-weight:700;letter-spacing:3px;color:var(--amber);text-transform:uppercase;margin:0 0 14px;display:flex;align-items:center;gap:10px}
@@ -85,7 +86,7 @@
   .verdict.bad{background:linear-gradient(180deg,#FBECE8,#F5E0D9)}
   .verdict .vface{flex:none;animation:bounceIn .6s cubic-bezier(.2,1.5,.4,1) both}
   .verdict .vkick{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--slate)}
-  .verdict .vline{font-family:var(--serif);font-weight:600;font-size:34px;line-height:1.02;margin:3px 0 10px;animation:slideIn .5s .08s both}
+  .verdict .vline{font-family:var(--serif);font-weight:600;font-size:clamp(24px,5vw,34px);line-height:1.02;margin:3px 0 10px;animation:slideIn .5s .08s both}
   .verdict .vtags .pill{animation:stampIn .45s .22s both}
   .verdict .burst,.scenecard .burst{position:absolute;inset:0;pointer-events:none}
   .burst i{position:absolute;width:9px;height:9px;border-radius:2px;opacity:0;animation:burst .9s ease-out .12s forwards}
@@ -153,12 +154,12 @@
   #clip.show{display:flex}
   #clip .cwrap{max-width:720px;width:100%}
   #clip .ckick{font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--amber2);animation:fadeUp .5s both}
-  #clip .ctitle{font-family:var(--serif);font-size:44px;font-weight:600;margin:12px 0 4px;line-height:1.05;animation:pop .55s .12s both}
+  #clip .ctitle{font-family:var(--serif);font-size:clamp(28px,7vw,44px);font-weight:600;margin:12px 0 4px;line-height:1.05;animation:pop .55s .12s both}
   #clip .cvig{transition:opacity .5s;margin:10px auto 2px;max-width:430px}
-  #clip .cline{font-family:var(--sans);font-size:23px;font-weight:500;color:#DFE5EF;min-height:64px;margin:6px auto 0;max-width:580px;line-height:1.35;transition:opacity .3s}
+  #clip .cline{font-family:var(--sans);font-size:clamp(18px,4.6vw,23px);font-weight:500;color:#DFE5EF;min-height:64px;margin:6px auto 0;max-width:580px;line-height:1.35;transition:opacity .3s}
   #clip .cfin{display:flex;gap:18px;align-items:center;justify-content:center;opacity:0;transform:translateY(14px) scale(.94);transition:.5s cubic-bezier(.2,.9,.3,1);margin-top:6px}
   #clip .cfin.show{opacity:1;transform:none}
-  #clip .cbig{font-family:var(--serif);font-size:38px;line-height:1.05;text-align:left;max-width:520px}
+  #clip .cbig{font-family:var(--serif);font-size:clamp(24px,6vw,38px);line-height:1.05;text-align:left;max-width:520px}
   #clip .cbig.cg{color:#8ED4A8}#clip .cbig.cb{color:#E8A79A}
   #clip .cprog{position:absolute;left:0;right:0;bottom:0;height:4px;background:rgba(255,255,255,.08)}
   #clip .cprog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--amber2),var(--gold))}
@@ -222,7 +223,18 @@
   .reflect{font-family:var(--serif);font-style:italic;font-size:16.5px;color:var(--slate);margin:12px 2px 0}
   svg.art{width:100%;height:auto;display:block}
   @media print{#prog,#chapters,#sky,#act,#flash,#clip,#sndbtn,.noprint{display:none!important}body,body.night{background:#fff!important}}
-  @media(max-width:900px){.g3{grid-template-columns:1fr}.wrap{padding:60px 20px 130px}.bigline{font-size:34px}.scenecard{flex-direction:column;text-align:center}#act .at{font-size:40px}}
+  @media(max-width:900px){
+    .g3{grid-template-columns:1fr}.wrap{padding:64px 20px 110px}.bigline{font-size:34px}
+    .covergrid{grid-template-columns:1fr;gap:16px;padding-top:80px}
+    .scenecard{flex-direction:column;text-align:center;padding:28px 22px}
+    .scenecard svg.char{max-width:180px!important}
+    .scenecard .flex{justify-content:center}
+    .dbox{padding:22px 20px}.dbox::before{display:none}
+    .rr{grid-template-columns:84px 1fr 42px;gap:9px}.rr .lab{font-size:10px}
+    #clip .cfin{flex-direction:column;gap:10px}#clip .cfin>div{text-align:center}#clip .cbig{text-align:center}
+    #clip{padding:22px 16px}
+    .verdict{padding:18px 18px}
+    #act .at{font-size:40px}}
 </style>
 </head>
 <body>
@@ -530,10 +542,10 @@ function render(){const b=el('sndbtn');if(b)b.textContent='Sound: '+(S.audio?'on
 
 /* ---------------- PROLOGUE ---------------- */
 function rCover(app){const cast=[['guide','Socrates','Your Guide','calm'],['marc',PERSONAS.marc.name,PERSONAS.marc.role,PERSONAS.marc.mood],['tiger',PERSONAS.tiger.name,PERSONAS.tiger.role,PERSONAS.tiger.mood],['pat',PERSONAS.pat.name,PERSONAS.pat.role,PERSONAS.pat.mood]];
- app.innerHTML=`<div class="dark-stage"><div class="wrap" style="min-height:100vh;display:grid;grid-template-columns:1.02fr .98fr;gap:34px;align-items:center">
+ app.innerHTML=`<div class="dark-stage"><div class="wrap covergrid">
   <div><div class="wordmark" style="margin-bottom:18px;animation:fadeUp .6s .1s both">SOCRATIX&nbsp;AI</div>
     <div style="font-family:var(--serif);font-size:14px;letter-spacing:4px;text-transform:uppercase;color:var(--amber2);margin-bottom:12px;animation:fadeUp .6s .25s both">An Interactive Journey</div>
-    <h1 style="font-size:66px;line-height:1;animation:fadeUp .7s .4s both">The Agentic Org</h1>
+    <h1 style="font-size:clamp(40px,9vw,66px);line-height:1;animation:fadeUp .7s .4s both">The Agentic Org</h1>
     <p style="font-family:var(--sans);font-size:19px;max-width:500px;margin-top:20px;color:#D6DDE4;line-height:1.55;animation:fadeUp .7s .6s both">Everyone is adopting AI. Almost no one is getting value. Walk the journeys of three leaders — where they win, and where the pitfalls hide — with every choice and consequence drawn from current research on how organizations adopt AI to optimize and innovate.</p>
     <div class="prev">
       <div class="prevrow" style="animation:fadeUp .6s .8s both"><b>1</b><span><strong>The Conversation</strong> — Socrates reads where you stand</span></div>
@@ -576,7 +588,7 @@ function rBaseline(app){const i=Math.min(S.dlg||0,DLG.length-1),beat=DLG[i];
           <div class="scoreline" style="margin-top:10px">Your reading: ${d.tot.toFixed(1)} of 15.</div></div>
         <div class="ph2" id="revPanel" style="margin-top:18px">
           <div class="dbox" style="cursor:default"><div class="vkick" style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--slate)">You might relate to…</div>
-            <h2 style="font-size:38px;margin:4px 0 8px">${per.name}, ${per.role}</h2>
+            <h2 style="font-size:clamp(28px,6vw,38px);margin:4px 0 8px">${per.name}, ${per.role}</h2>
             <p style="font-size:19px;margin:0 0 8px;font-family:var(--serif)">${d.read}</p>
             <div class="dact show" style="margin-top:16px"><button class="btn" onclick="go('choose')">Meet the leaders →</button></div></div></div></div>
     </div></div>`;
@@ -618,7 +630,7 @@ function rJourney(app){const p=PERSONAS[S.persona];if(!p){go('choose');return}co
     if(firstEnd)setTimeout(()=>snd.good(),350);
     app.innerHTML=`<div class="wrap"><div class="kick">${p.name} · The end</div>
     <div class="scenecard">${firstEnd?burst():''}<div class="ring soft" style="width:200px;height:200px;top:-70px;right:-60px"></div>
-      <div style="flex:1"><div style="color:var(--amber2);font-weight:700;letter-spacing:1px;font-size:12px;text-transform:uppercase">${p.role}</div><p class="bigline" style="color:#fff;margin-top:10px;font-size:40px">${wordsUp(p.outcome)}</p></div>
+      <div style="flex:1"><div style="color:var(--amber2);font-weight:700;letter-spacing:1px;font-size:12px;text-transform:uppercase">${p.role}</div><p class="bigline" style="color:#fff;margin-top:10px;font-size:clamp(28px,6vw,40px)">${wordsUp(p.outcome)}</p></div>
       <div class="charwrap">${CHAR(S.persona,'proud',260)}</div></div>
     <div class="card" style="margin-top:16px"><div class="flex" style="gap:20px;align-items:flex-start"><div style="padding-top:4px">${FLAME(m.m,44)}</div>
       <div style="flex:1"><div class="kick" style="margin-bottom:8px">Your path · ${m.recs} of ${m.done} best calls</div>${recap}</div></div></div>
@@ -639,7 +651,7 @@ function rJourney(app){const p=PERSONAS[S.persona];if(!p){go('choose');return}co
     ${idx===0?`<p style="font-family:var(--serif);font-size:20px;color:var(--slate);margin:0 0 16px">${esc(p.opening)}</p>`:''}
     <div class="scenecard" id="scene"><div class="ring soft" style="width:220px;height:220px;top:-80px;right:-70px"></div>
       <div style="flex:1"><div class="flex" style="gap:12px;margin-bottom:14px">${tagPill(node.pillar,true)}<div class="trail">${trail}</div></div>
-        <p class="bigline" style="color:#fff;font-size:44px;max-width:560px">${firstLook?wordsUp(node.line):esc(node.line)}</p></div>
+        <p class="bigline" style="color:#fff;font-size:clamp(28px,6.5vw,44px);max-width:560px">${firstLook?wordsUp(node.line):esc(node.line)}</p></div>
       <div class="charwrap" id="charSlot">${CHAR(S.persona,mood,270)}</div></div>
     <div style="margin-top:18px">${choices}</div>${below}
     <div class="flex" style="margin-top:18px">${idx>0?`<button class="btn ghost" onclick="prevNode()">← Back</button>`:''}<button class="btn" onclick="nextNode()" ${picked?'':'disabled'}>${idx===p.nodes.length-1?'The end':'Next'} →</button></div></div>`;
@@ -654,10 +666,10 @@ function prevNode(){if(S.nodeIdx>0)S.nodeIdx--;save();render();window.scrollTo({
 function rFoundations(app){const tabs=FOUNDATIONS.map(f=>`<div class="tab ${S.foundTab===f.key?'on':''}" data-tab="${f.key}">${IC[f.key]} ${f.label}</div>`).join('');
   const f=FOUNDATIONS.find(x=>x.key===S.foundTab);
   const firstF=window._ft!==f.key;window._ft=f.key;
-  app.innerHTML=`<div class="wrap"><div class="kick">Three Forces</div><h1 class="bigline" style="font-size:44px">The forces behind every story</h1>
+  app.innerHTML=`<div class="wrap"><div class="kick">Three Forces</div><h1 class="bigline" style="font-size:clamp(30px,6vw,44px)">The forces behind every story</h1>
     <div class="tabs" style="margin-top:18px">${tabs}</div>
     <div class="scenecard" style="min-height:280px;color:#fff"><div style="flex:1"><div style="color:var(--amber2);font-weight:700;letter-spacing:1px;font-size:12px;text-transform:uppercase">${f.label}</div>
-      <h2 style="color:#fff;font-size:34px;margin:6px 0 12px">${f.head}</h2><p class="bigline" style="color:#e7ebf3;font-size:32px;max-width:520px">${firstF?wordsUp(f.line):esc(f.line)}</p>
+      <h2 style="color:#fff;font-size:clamp(26px,5.5vw,34px);margin:6px 0 12px">${f.head}</h2><p class="bigline" style="color:#e7ebf3;font-size:clamp(24px,5vw,32px);max-width:520px">${firstF?wordsUp(f.line):esc(f.line)}</p>
       <div style="margin-top:16px">${f.chips.map((c,i)=>`<span class="chip" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);color:#e7ebf3;animation-delay:${(0.3+i*0.14).toFixed(2)}s"><b></b>${esc(c)}</span>`).join('')}</div></div>
       <div style="width:280px">${artPillar(f.key)}</div></div>
     <p class="reflect">Worth sitting with: ${esc(f.discuss)}</p>
@@ -671,7 +683,7 @@ function rRoadmap(app){let w=null,lo=99;PILLARS.forEach(p=>{const v=avg(S.votes[
    ['See clearly before you spend','Score yourselves honestly across the three foundations — before anyone commits a dollar to building.'],
    ['Put AI in your leaders’ hands','An hour of real use changes the conversation more than a quarter of slideware.'],
    ['Prove it small','One workflow, one owner, one number you already track. Belief follows evidence.']];
-  app.innerHTML=`<div class="wrap"><div class="kick">The Road Ahead</div><h1 class="bigline" style="font-size:48px">How your story continues.</h1>
+  app.innerHTML=`<div class="wrap"><div class="kick">The Road Ahead</div><h1 class="bigline" style="font-size:clamp(30px,7vw,48px)">How your story continues.</h1>
     ${story}
     <div style="margin:16px 0">${artRoad()}</div>
     <div class="grid g3">
@@ -680,7 +692,7 @@ function rRoadmap(app){let w=null,lo=99;PILLARS.forEach(p=>{const v=avg(S.votes[
     ${steps.map((st,i)=>`<div class="rrow" style="animation-delay:${(0.3+i*0.15).toFixed(2)}s"><b style="flex:none;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--amber);color:var(--amber);display:grid;place-items:center;font-size:12px;font-weight:800">${i+1}</b><div><strong>${st[0]}.</strong> <span class="muted" style="font-size:14.5px">${st[1]}</span></div></div>`).join('')}
     <div class="scenecard" style="margin-top:20px"><div class="ring soft" style="width:200px;height:200px;top:-70px;right:-60px"></div>
       <div style="flex:1"><div style="color:var(--amber2);font-weight:700;letter-spacing:1px;font-size:12px;text-transform:uppercase">A parting word</div>
-        <h2 style="color:#fff;font-size:32px;margin:8px 0 8px">Before you transform anything, see clearly.</h2>
+        <h2 style="color:#fff;font-size:clamp(25px,5.5vw,32px);margin:8px 0 8px">Before you transform anything, see clearly.</h2>
         <p style="font-family:var(--serif);font-size:20px;color:#e7ebf3;max-width:520px">The leaders who crossed the divide didn’t start by building. They started by seeing. When you want a guide for that first step, we’re easy to find.</p>
         <div class="wordmark" style="margin-top:12px">SOCRATIX AI · <span style="font-family:var(--serif);letter-spacing:0;font-style:italic;text-transform:none">Human Wisdom. AI Illumination.</span> · <span style="letter-spacing:.5px;text-transform:none">socratixai.com</span></div></div>
       <div class="charwrap">${CHAR('guide','calm',220)}</div></div>
